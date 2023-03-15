@@ -1,0 +1,22 @@
+/* nav color */
+header .navbar-custom{ 
+    background-color: rgba(20, 20, 20, 0.884)
+}
+
+/* dropdown mobile menu */
+.navbar-collapse a{ 
+    text-align: center;
+    float: center;
+}
+@media screen and (max-width: 600px) {
+    .nav-item{
+        margin-bottom: 43px;
+    }
+    .navbar-collapse a{
+        font-size: 2.5em;
+    }
+    .signIn-button{
+        font-size: 2.5em;
+        padding: 1.5vh;
+    }
+}
