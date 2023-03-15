@@ -1,0 +1,37 @@
+#about{
+    margin-top: 20vh;
+}
+
+#about a{
+    text-decoration: none;
+}
+
+#about a h2{
+    color: #ffc107;
+}
+#about span{
+    font-family: 'Caveat', sans-serif;
+    font-size: 1.2em;
+    color: #ffc107;
+}
+
+#about p{
+    color: rgb(255, 255, 255);
+    text-align: justify;
+    text-justify: auto;
+    line-height: 1.8;
+}
+
+@media screen and (max-width: 600px) {
+    #about .container .row{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #about{
+        margin-top: 10vh;
+    }
+
+    #about p{
+        font-size: 0.8rem;
+    }
+}
