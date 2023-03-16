@@ -9,6 +9,9 @@ import { BannerComponent } from './components/header/banner/banner.component';
 import { AboutComponent } from './components/about/about.component';
 import { ResumeComponent } from './components/resume/resume.component';
 import { ExperienceComponent } from './components/resume/experience/experience.component';
+// Import ng-circle-progress
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { SkillsComponent } from './components/skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +21,23 @@ import { ExperienceComponent } from './components/resume/experience/experience.c
     BannerComponent,
     AboutComponent,
     ResumeComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  ],
+    AppRoutingModule,
+    NgCircleProgressModule.forRoot({
+      "radius": 70,
+      "maxPercent": 100,
+      "showSubtitle": false,
+      "showUnits": false,
+      "outerStrokeColor": "#ffc107",
+      "innerStrokeColor": "#ffe7a3",
+      "innerStrokeWidth": 3,
+      "titleColor": "#8f8f8f",
+      "subtitleColor": "#9c9c9c"
+    })],
   providers: [],
   bootstrap: [AppComponent]
 })
