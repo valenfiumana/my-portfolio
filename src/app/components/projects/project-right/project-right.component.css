@@ -1,0 +1,40 @@
+#project  img {
+    filter: grayscale(100%);
+    opacity: 0.5;
+}
+
+#project img:hover{
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+#project .project-text{
+    color: rgb(185, 184, 184);
+    margin-left: -50px;
+}
+
+#project .project-text .subtitle{
+    text-align: right;
+    font-size: 0.8em;
+    color:#ffc107;
+    margin: 0.2em;
+}
+#project .project-text h3{
+    color:#ffffff;
+    text-align: right;
+}
+
+#project .project-text .description{
+    background-color: rgb(17, 16, 16);
+    padding: 17px;
+    margin-top: 30px;
+}
+#project .project-text .description span{
+    color:#ffc107;
+}
+
+#project .project-text .tools{
+    color:#7e7a7a;
+    font-size: 0.8em;
+    text-align: right;
+}
