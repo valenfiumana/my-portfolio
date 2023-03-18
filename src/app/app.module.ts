@@ -15,6 +15,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectLeftComponent } from './components/projects/project-left/project-left.component';
 import { ProjectRightComponent } from './components/projects/project-right/project-right.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ProjectRightComponent } from './components/projects/project-right/proje
     SkillsComponent,
     ProjectsComponent,
     ProjectLeftComponent,
-    ProjectRightComponent
+    ProjectRightComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
