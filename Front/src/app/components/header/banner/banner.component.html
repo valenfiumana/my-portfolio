@@ -1,16 +1,16 @@
 <div id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
         <!-- text -->
-        <h1 class="text-light hero-text">Hi! I'm Valentina</h1>
+        <h1 class="text-light hero-text">Hi! I'm {{persona.nombre}}</h1>
         <div class="typewriter mt-4">
             <p class="typing-demo text-warning">
-                FullStack Developer.
+                {{persona.puesto}}
             </p>
         </div>
         <div class="social-links ">
             <!-- social -->
-            <a href="" class="bg-github text-warning"><i class="fa-brands fa-github"></i></a>
-            <a href="" class="bg-linkedin mx-3 text-warning"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="{{persona.github}}" class="bg-github text-warning"><i class="fa-brands fa-github"></i></a>
+            <a href="{{persona.linkedin}}" class="bg-linkedin mx-3 text-warning"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
     </div>
 </div>
