@@ -6,7 +6,7 @@ import com.example.myportfolio.services.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,6 +24,7 @@ public class PersonaController {
     }
 
     //GUARDAR
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<Object> guardarPersona(@RequestBody Persona persona) throws ResourceNotFoundException{
         return ResponseEntity.ok(personaService.save(persona));
@@ -48,6 +49,7 @@ public class PersonaController {
     }
 
     //BORRAR
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<String> borrarCiudad(@PathVariable Long id) throws  ResourceNotFoundException {
         Optional<Persona> ciudad = personaService.findById(id);
@@ -62,6 +64,7 @@ public class PersonaController {
     }
 
     //ACTUALIZAR
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping
     public ResponseEntity<Persona> actualizarPersona(@RequestBody Persona persona) throws ResourceNotFoundException {
         Optional<Persona> personaPedida = personaService.findById(persona.getId());
