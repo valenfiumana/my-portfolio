@@ -1,1 +1,14 @@
-<p>experience works!</p>
+<h3 class="resume-title text-warning mt-5">Work experience</h3>
+<div class="col lg 1"></div>
+    <div class="col-lg-11">
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let Experiencia of experiencia">
+                    <td>
+                        <h2 class="text-light">{{Experiencia.puesto}}</h2>
+                    </td>
+                    <td class="text-light">{{Experiencia.descripcion}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

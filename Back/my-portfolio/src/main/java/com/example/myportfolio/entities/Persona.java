@@ -1,11 +1,14 @@
 package com.example.myportfolio.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.Singular;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -36,4 +39,44 @@ public class Persona {
     private String github;
     @Column
     private String linkedin;
+
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "personaId")
+    private List<Experiencia> experiencia = new ArrayList<>();
+    public Persona(){}
+    public Persona(Long id, String nombre, String apellido, String apodo, String url_img, String sobreMi, String puesto, String github, String linkedin) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.apodo = apodo;
+        this.url_img = url_img;
+        this.sobreMi = sobreMi;
+        this.puesto = puesto;
+        this.github = github;
+        this.linkedin = linkedin;
+    }
+
+    public Persona(String nombre, String apellido, String apodo, String url_img, String sobreMi, String puesto, String github, String linkedin) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.apodo = apodo;
+        this.url_img = url_img;
+        this.sobreMi = sobreMi;
+        this.puesto = puesto;
+        this.github = github;
+        this.linkedin = linkedin;
+    }
+
+    public Persona(String nombre, String apellido, String apodo, String url_img, String sobreMi, String puesto, String github, String linkedin, List<Experiencia> experiencia) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.apodo = apodo;
+        this.url_img = url_img;
+        this.sobreMi = sobreMi;
+        this.puesto = puesto;
+        this.github = github;
+        this.linkedin = linkedin;
+        this.experiencia = experiencia;
+    }
 }

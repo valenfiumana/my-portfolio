@@ -49,9 +49,9 @@ public class PersonaController {
 
     //BORRAR
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> borrarCiudad(@PathVariable Long id) throws  ResourceNotFoundException {
-        Optional<Persona> ciudad = personaService.findById(id);
-        if(ciudad.isPresent()){
+    public ResponseEntity<String> borrarPersona(@PathVariable Long id) throws  ResourceNotFoundException {
+        Optional<Persona> persona = personaService.findById(id);
+        if(persona.isPresent()){
             personaService.delete(id);
             return ResponseEntity.ok("La persona con id "+id+" fue eliminada");
         }

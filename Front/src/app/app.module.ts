@@ -17,6 +17,7 @@ import { ProjectLeftComponent } from './components/projects/project-left/project
 import { ProjectRightComponent } from './components/projects/project-right/project-right.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     NgCircleProgressModule.forRoot({
       "radius": 70,
       "maxPercent": 100,
