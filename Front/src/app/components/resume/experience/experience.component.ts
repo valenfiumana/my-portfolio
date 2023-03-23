@@ -10,7 +10,7 @@ import {TokenService} from 'src/app/service/token.service'
 export class ExperienceComponent implements OnInit{
   expe: Experiencia[] = [];
 
-  constructor(private sExperiencia: ExperienciaService, private tokenService: TokenService) { }
+  constructor(private experienciaService: ExperienciaService, private tokenService: TokenService) { }
 
   isLogged = false;
 
@@ -24,16 +24,17 @@ export class ExperienceComponent implements OnInit{
   }
 
   cargarExperiencia(): void {
-    this.sExperiencia.lista().subscribe(data => { this.expe = data; })
+    this.experienciaService.lista().subscribe(data => { this.expe = data; })
   }
 
   delete(id?: number){
     if(id != undefined){
-      this.sExperiencia.deleteById(id).subscribe(
+      this.experienciaService.deleteById(id).subscribe(
         data => {
           this.cargarExperiencia();
+          location.reload();
         }, err => {
-          alert("No se pudo borrar la experiencia");
+          this.cargarExperiencia();
         }
       )
     }
