@@ -8,26 +8,26 @@ import { Educacion } from '../model/educacion';
 })
 export class EducacionService {
 
-  expURL = 'http://localhost:8080/educacion/'
+  edURL = 'http://localhost:8080/educacion/'
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Educacion[]>{
-    return this.httpClient.get<Educacion[]>(this.expURL);
+    return this.httpClient.get<Educacion[]>(this.edURL);
   }
 
   public getById(id : number): Observable<Educacion>{
-    return this.httpClient.get<Educacion>(this.expURL + id)
+    return this.httpClient.get<Educacion>(this.edURL + id)
   }
 
   public save(educacion : Educacion): Observable<any>{
-    return this.httpClient.post<any>(this.expURL, educacion)
+    return this.httpClient.post<any>(this.edURL, educacion)
   }
 
   public update(educacion : Educacion): Observable<any>{
-    return this.httpClient.put<any>(this.expURL, educacion)
+    return this.httpClient.put<any>(this.edURL, educacion)
   }
 
   public deleteById(id : number): Observable<Educacion>{
-    return this.httpClient.delete<Educacion>(this.expURL + id)
+    return this.httpClient.delete<Educacion>(this.edURL + id)
   }
 }
