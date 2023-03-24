@@ -1,0 +1,22 @@
+h3 {
+    display: inline-block;
+    margin-top: 15vh;
+}
+
+img {
+    filter: grayscale(100%);
+    opacity: 0.5;
+}
+
+img:hover{
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+
+@media screen and (max-width: 600px) {
+    h3 {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+}

@@ -1,0 +1,42 @@
+<div class="education">
+    <div class="mt-2">
+        <div class="title">
+            <h3 class="text-warning ms-4">Education</h3>
+            <button type="button" class="add btn btn-outline-warning btn-sm ms-4 mb-2" routerLink="/neweducation" *ngIf="isLogged">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+        <div class="container mt-5">
+            <div class="table-responsive">
+                <table class="table text-white">
+                    <tbody>
+                        <tr *ngFor="let Education of educacion">
+                            <td colspan="2" class="pe-5">
+                                <img
+                                    src="../../../assets/resume/dh.png"
+                                    alt=""
+                                    />
+                            </td>
+                            <td class="pe-5">
+                                <h6>{{Education.titulo}}</h6>
+                            </td>
+                            <td class="pe-5">
+                                <p>{{Education.anioInicio}} - {{Education.anioFin}}</p>
+                            </td>
+                            <td class="descripcion pe-5">
+                                <p>{{Education.descripcion}}</p>
+                            </td>
+                            <td *ngIf="isLogged">
+                                <button class="btn btn-light mb-2" routerLink="/editeducation/{{Education.id}}">
+                                    <i class="fa fa-edit"></i></button>
+                                    <button class="btn btn-danger" (click)="delete(Education.id)">
+                                        <i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</div>

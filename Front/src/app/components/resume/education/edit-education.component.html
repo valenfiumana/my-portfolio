@@ -1,0 +1,45 @@
+<section class="h-100 h-custom" *ngIf="educacion">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-8 col-xl-6">
+          <div class="card rounded-3">
+            <img src="../../../../assets/edit-education.jpg"
+              class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+              alt="Sample photo">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Edit Education</h3>
+  
+              <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+  
+                <div class="form-group form-outline mb-4">
+                    <label for="titulo">Title</label>
+                    <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="educacion.titulo" required>
+                </div>
+                <div class="form-group mb-4">
+                    <label for="descripcion">Description</label>
+                    <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="educacion.descripcion" required>
+                </div>
+                <div class="form-group mb-4">
+                    <label for="img_institucion">Company logo</label>
+                    <input type="text" class="form-control" id="img_institucion" name="img_institucion" [(ngModel)]="educacion.img_institucion" required>
+                </div>
+                <div class="form-group mb-4">
+                    <label for="anioInicio">Start</label>
+                    <input type="number" class="form-control" id="anioInicio" name="anioInicio" [(ngModel)]="educacion.anioInicio" required>
+                </div>
+                <div class="form-group mb-4">
+                    <label for="anioFin">End</label>
+                    <input type="number" class="form-control" id="anioFin" name="anioFin" [(ngModel)]="educacion.anioFin" required>
+                </div>
+                <button class="btn btn-primary">
+                    Save changes
+                </button>
+  
+              </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
