@@ -1,1 +1,40 @@
-<p>experience works!</p>
+<div class="experiences">
+    <div class="mt-5">
+        <div>
+            <h3 class="text-warning ms-4">Work experience</h3>
+            <button type="button" class="btn btn-outline-warning btn-sm ms-4 mb-2" routerLink="/nuevaexp" *ngIf="isLogged">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+        <div class="container mt-5">
+            <div class="table-responsive">
+                <table class="table text-white">
+                    <tbody>
+                        <tr *ngFor="let Experiencia of expe">
+                            <td colspan="2" class="pe-5">
+                                <img
+                                    src="../../../assets/resume/dh.png"
+                                    alt=""
+                                    />
+                            </td>
+                            <td class="pe-5">
+                                <h6>{{Experiencia.puesto}}</h6>
+                            </td>
+                            <td class="pe-5">
+                                <p>{{Experiencia.anioInicio}} - {{Experiencia.anioFin}}</p>
+                            </td>
+                            <td class="descripcion pe-5">{{Experiencia.descripcion}}<br></td>
+                            <td *ngIf="isLogged">
+                                <button class="btn btn-light me-4 mb-2" routerLink="/editexp/{{Experiencia.id}}">
+                                    <i class="fa fa-edit"></i></button>
+                                    <button class="btn btn-danger" (click)="delete(Experiencia.id)">
+                                        <i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</div>

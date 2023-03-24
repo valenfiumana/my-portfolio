@@ -20,7 +20,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { InterceptorProvider } from './service/interceptor.service';
+import { InterceptorProvider } from 'src/app/service/interceptor.service';
+import { NewExperienceComponent } from './components/resume/experience/new-experience.component';
+import { EditExperienceComponent } from './components/resume/experience/edit-experience.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { InterceptorProvider } from './service/interceptor.service';
     ProjectRightComponent,
     FooterComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    NewExperienceComponent,
+    EditExperienceComponent
   ],
   imports: [
     BrowserModule,
