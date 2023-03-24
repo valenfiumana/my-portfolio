@@ -1,10 +1,29 @@
 <div class="resume mt-4">
     <div class="container">
-        <div class="section-title">
-            <h2>Some things I've built</h2>
+        <div>
+            <h3 class="text-warning me-3">Some things I've built</h3>
+            <button type="button" class="btn btn-outline-warning btn-sm ms-4 mb-3 inline" routerLink="/newproject" *ngIf="isLogged">
+                <i class="fa-solid fa-plus"></i>
+            </button>
         </div>
-        <app-project-left></app-project-left>
-        <app-project-right></app-project-right>
-        <app-project-left></app-project-left>
+        <div  *ngFor="let Project of projects">
+            <div class="row mt-5 mb-4">
+                <div class="col-md-6">
+                    <div>
+                        <a href="#">
+                            <img alt="Web Studio" class="img-fluid" src="../../../../assets/projects/project.PNG" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5 ml-auto d-flex align-items-center mt-4 mt-md-0">
+                    <div>
+                        <h4 class="text-start text-white">{{Project.titulo}}</h4>
+                        <p class="description text-white">{{Project.descripcion}}</p>
+                        <button type="button" class="btn btn-tertiary text-warning" routerLink="/editproject/{{Project.id}}" *ngIf="isLogged"><i class="fa fa-edit"></i></button>
+                        <button type="button" class="btn btn-tertiary text-warning" (click)="delete(Project.id)" *ngIf="isLogged"><i class="fa fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -45,6 +45,16 @@ public class Persona {
     @JoinColumn(name = "personaId")
     private List<Experiencia> experiencia = new ArrayList<>();
 
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "personaId")
+    private List<Educacion> educacion = new ArrayList<>();
+
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "personaId")
+    private List<Proyecto> proyectos = new ArrayList<>();
+
     public Persona(){}
     public Persona(String nombre, String apellido, String apodo, String url_img, String sobreMi, String puesto, String github, String linkedin) {
         this.nombre = nombre;
