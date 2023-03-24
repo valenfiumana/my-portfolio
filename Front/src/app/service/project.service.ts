@@ -8,26 +8,26 @@ import { Project } from '../model/project'
 })
 export class ProjectService {
 
-  expURL = 'http://localhost:8080/proyectos/'
+  pURL = 'http://localhost:8080/proyectos/'
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Project[]>{
-    return this.httpClient.get<Project[]>(this.expURL);
+    return this.httpClient.get<Project[]>(this.pURL);
   }
 
   public getById(id : number): Observable<Project>{
-    return this.httpClient.get<Project>(this.expURL + id)
+    return this.httpClient.get<Project>(this.pURL + id)
   }
 
   public save(project : Project): Observable<any>{
-    return this.httpClient.post<any>(this.expURL, project)
+    return this.httpClient.post<any>(this.pURL, project)
   }
 
   public update(project : Project): Observable<any>{
-    return this.httpClient.put<any>(this.expURL, project)
+    return this.httpClient.put<any>(this.pURL, project)
   }
 
   public deleteById(id : number): Observable<Project>{
-    return this.httpClient.delete<Project>(this.expURL + id)
+    return this.httpClient.delete<Project>(this.pURL + id)
   }
 }
