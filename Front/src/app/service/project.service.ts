@@ -8,7 +8,7 @@ import { Project } from '../model/project'
 })
 export class ProjectService {
 
-  pURL = 'http://localhost:8080/proyectos/'
+  pURL = 'https://portfolio-backend-p0je.onrender.com/proyectos/'
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Project[]>{
