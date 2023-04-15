@@ -68,7 +68,7 @@ By creating the Argentina Programa Portfolio, I have gained valuable experience 
 </a> &#xa0; &#xa0;
 
 <a href="https://angular.io/">
-  <img  width="50" title="Angular" alt="Angular Logo" src="https://assets.stickpng.com/images/5847ea22cef1014c0b5e4833.png">
+  <img  width="50" title="Angular" alt="Angular Logo" src="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg">
 </a> &#xa0; &#xa0;
 
 <a href="https://www.typescriptlang.org/">
